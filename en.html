@@ -254,8 +254,8 @@ array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
   <div class="pno">05</div>
   <div><h2>Quant research toolchains</h2><div class="pmeta">Personal projects · sole designer, developer and researcher · Dec 2025 – present<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
 </div>
-<p class="lead">Since December 2025 I have built two research toolchains on my own, and I have live-trading experience. Only the engineering structure is shown here; strategies and returns stay private.</p>
-<h3>DIGITAL-ASSET RESEARCH TOOLCHAIN (RUST REFACTOR)</h3>
+<p class="lead">Since December 2025 I have built two research toolchains on my own, and I have live-trading experience. The digital-asset toolchain started in Python and moved to Rust after benchmarking showed latency was the bottleneck. Only the engineering structure is shown here; strategies and returns stay private.</p>
+<h3>DIGITAL-ASSET RESEARCH TOOLCHAIN (PYTHON → RUST)</h3>
 <div class="flow"><div class="step"><b>Archive</b><span>raw market data stored</span></div><div class="arrow">→</div><div class="step"><b>Normalise</b><span>one format across sources</span></div><div class="arrow">→</div><div class="step"><b>Replay</b><span>markets replayed in event time</span></div><div class="arrow">→</div><div class="step"><b>Strategy and factors</b><span>factors mined and backtested on Tardis data</span></div><div class="arrow">→</div><div class="step last"><b>Execution and risk</b><span>simulated fills and risk checks</span></div></div>
 <div style="height: 14px"></div>
 <h3>US EQUITY RESEARCH AND BACKTESTING (LEAN)</h3>

@@ -254,8 +254,8 @@ array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
   <div class="pno">05</div>
   <div><h2>量化研究工具链</h2><div class="pmeta">个人项目 · 独立负责设计、开发与研究 · 2025.12 至今<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
 </div>
-<p class="lead">从 2025 年 12 月起一个人持续开发两套研究工具链，并有实盘交易经验。下面只展示工程结构，策略细节和收益不公开。</p>
-<h3>数字资产研究工具链（Rust 重构）</h3>
+<p class="lead">从 2025 年 12 月起一个人持续开发两套研究工具链，并有实盘交易经验。数字资产工具链先用 Python 搭建，遇到延迟瓶颈后经对比测试迁移到 Rust。下面只展示工程结构，策略细节和收益不公开。</p>
+<h3>数字资产研究工具链（从 Python 迁移到 Rust）</h3>
 <div class="flow"><div class="step"><b>行情归档</b><span>原始行情数据存档</span></div><div class="arrow">→</div><div class="step"><b>标准化</b><span>统一不同来源的格式</span></div><div class="arrow">→</div><div class="step"><b>历史回放</b><span>按事件时间重放市场</span></div><div class="arrow">→</div><div class="step"><b>策略与因子</b><span>用 Tardis 数据挖因子、回测评估</span></div><div class="arrow">→</div><div class="step last"><b>执行与风控模拟</b><span>成交与风控的模拟检查</span></div></div>
 <div style="height: 14px"></div>
 <h3>美股研究与回测平台（LEAN）</h3>
