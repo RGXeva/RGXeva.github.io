@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>徐亦优 作品集</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="徐亦优 · 作品集: distributed systems, parallel computing, functional programming and quant research projects.">
+<style>
+@media screen {
+  html { background: #e6eaef; }
+  body { padding: 72px 0 40px; }
+  .page { margin: 0 auto 28px; border-radius: 6px; box-shadow: 0 12px 34px rgba(15, 30, 51, .18); }
+  .topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 52px; padding: 0 22px;
+             display: flex; align-items: center; justify-content: space-between;
+             background: rgba(15, 30, 51, .94); color: #fff; backdrop-filter: blur(8px);
+             font-family: "Avenir Next", "PingFang SC", sans-serif; font-size: 14px; }
+  .topnav .brand { font-weight: 600; letter-spacing: .5px; }
+  .topnav a { color: #cfe3f5; text-decoration: none; margin-left: 20px; }
+  .topnav a:hover { color: #fff; }
+}
+@media screen and (max-width: 640px) {
+  body { padding-top: 60px; }
+  .topnav { padding: 0 12px; font-size: 13px; }
+  .topnav a { margin-left: 12px; }
+}
+@media print { .topnav { display: none; } }
+</style><style>
+@page { size: 320mm 180mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif; color: #2f3946;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 320mm; height: 180mm; padding: 13mm 15mm 11mm; position: relative; overflow: hidden;
+        page-break-after: always; break-after: page; background: #fff; }
+.page:last-child { page-break-after: auto; }
+.foot { position: absolute; left: 15mm; right: 15mm; bottom: 6mm; display: flex; justify-content: space-between;
+        font-size: 8.5pt; color: #6b7684; }
+.phead { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.pno { font-size: 26pt; font-weight: 600; color: #1f5d8c; line-height: 1; padding-top: 2px; letter-spacing: -.5px; }
+h2 { font-size: 20pt; font-weight: 600; color: #1c2430; line-height: 1.15; }
+.pmeta { margin-top: 5px; font-size: 9.5pt; color: #6b7684; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.chips { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.chip { font-size: 8pt; color: #1f5d8c; background: #eaf1f7; border-radius: 3px; padding: 1px 6px; }
+.cols { display: flex; gap: 26px; }
+.cols > div { min-width: 0; }
+.lead { font-size: 11.5pt; color: #1c2430; line-height: 1.6; margin-bottom: 12px; }
+h3 { font-size: 10.5pt; font-weight: 600; color: #1f5d8c; letter-spacing: 1px; margin: 4px 0 7px; }
+ul.pts { list-style: none; }
+ul.pts li { position: relative; padding-left: 13px; font-size: 9.8pt; line-height: 1.55; margin-bottom: 5px; }
+ul.pts li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: #1f5d8c; }
+b { color: #1c2430; font-weight: 600; }
+.stats { display: flex; gap: 10px; }
+.stat { flex: 1; background: #f5f8fb; border-radius: 8px; padding: 10px 12px; }
+.stat .num { font-size: 18pt; font-weight: 600; color: #1f5d8c; line-height: 1.1; }
+.stat .lab { font-size: 8.8pt; color: #6b7684; margin-top: 3px; line-height: 1.35; }
+.card { border: 1px solid #d7dee6; border-radius: 10px; padding: 12px 14px; }
+.ctitle { font-size: 10.5pt; font-weight: 600; color: #1c2430; margin-bottom: 2px; }
+.csub { font-size: 8.8pt; color: #6b7684; margin-bottom: 6px; }
+table.t { border-collapse: collapse; width: 100%; font-size: 9.3pt; }
+table.t th { text-align: left; font-weight: 600; color: #6b7684; font-size: 8.5pt; border-bottom: 1px solid #d7dee6; padding: 4px 6px; }
+table.t td { padding: 5px 6px; border-bottom: 1px solid #e6ebf0; font-variant-numeric: tabular-nums; }
+table.t td.n { text-align: right; } table.t th.n { text-align: right; }
+table.t tr.sel td { background: #eaf1f7; color: #1c2430; font-weight: 600; }
+.term { background: #0f1a2a; border-radius: 10px; padding: 0 0 10px; font-family: "SF Mono", Menlo, monospace; font-size: 7.1pt; line-height: 1.55; color: #c6d3e0; overflow: hidden; }
+.term .bar { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: #16253a; color: #8ea4ba; font-family: "Avenir Next", "PingFang SC", sans-serif; font-size: 8.5pt; margin-bottom: 8px; }
+.term .bar i { width: 8px; height: 8px; border-radius: 50%; background: #2d4462; display: inline-block; }
+.term > div:not(.bar) { padding: 0 12px 0 26px; text-indent: -14px; white-space: pre-wrap; }
+.term .cmd { color: #ffffff; } .term .dim { color: #6f849a; } .term .hi { color: #8fc6f2; }
+.flow { display: flex; align-items: stretch; gap: 6px; }
+.flow .step { flex: 1; border: 1px solid #d7dee6; border-radius: 8px; padding: 8px 9px; background: #fff; }
+.flow .step b { display: block; font-size: 9.5pt; }
+.flow .step span { display: block; font-size: 8.3pt; color: #6b7684; margin-top: 2px; line-height: 1.35; }
+.flow .step.last { background: #1c2430; border-color: #1c2430; }
+.flow .step.last b { color: #fff; } .flow .step.last span { color: #b9c6d3; }
+.flow .arrow { display: flex; align-items: center; color: #a3adb8; font-size: 13pt; }
+pre.code { background: #f5f8fb; border-radius: 8px; padding: 10px 12px; font-family: "SF Mono", Menlo, monospace; font-size: 8.4pt; line-height: 1.55; color: #1c2430; white-space: pre; }
+pre.code .k { color: #1f5d8c; font-weight: 600; }
+.shot { border-radius: 12px; overflow: hidden; box-shadow: 0 6px 22px rgba(15, 30, 51, .18); }
+.shot img { display: block; width: 100%; }
+.note { font-size: 8.6pt; color: #6b7684; line-height: 1.45; }
+/* cover */
+.cover { background: radial-gradient(circle at 85% 10%, #1b3354 0%, #0f1e33 55%); color: #fff; }
+.cover .kicker { font-size: 9.5pt; letter-spacing: 4px; color: #3d8fd1; font-weight: 600; }
+.cover h1 { font-size: 40pt; font-weight: 600; letter-spacing: 6px; margin-top: 8px; line-height: 1.1; }
+.cover h1 span { font-size: 18pt; letter-spacing: .5px; color: #9fb6cc; font-weight: 500; margin-left: 14px; }
+.cover .who { margin-top: 10px; font-size: 11pt; color: #c6d3e0; }
+.cover .contact { margin-top: 4px; font-size: 10pt; color: #8ea4ba; }
+.cover .contact a { color: #8fc6f2; text-decoration: none; }
+.cover .bar { width: 56px; height: 3px; background: #3d8fd1; border-radius: 2px; margin: 16px 0 0; }
+.grid6 { position: absolute; left: 15mm; right: 15mm; bottom: 13mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pc { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 10px; padding: 11px 13px; }
+.pc .no { font-size: 9pt; color: #3d8fd1; font-weight: 600; letter-spacing: 1px; }
+.pc .tt { font-size: 11.5pt; font-weight: 600; margin-top: 3px; }
+.pc .tg { font-size: 8.5pt; color: #8ea4ba; margin-top: 2px; }
+.pc .kp { font-size: 10pt; color: #dbe7f2; margin-top: 7px; }
+.pc .kp b { color: #8fc6f2; font-weight: 600; }
+</style></head>
+<body>
+<nav class="topnav"><span class="brand">徐亦优 · 作品集</span><span>
+<a href="en.html">English</a><a href="portfolio-zh.pdf">下载 PDF</a><a href="https://github.com/RGXeva">GitHub</a>
+</span></nav><section class="page cover">
+  <div class="kicker">PORTFOLIO · 作品集</div>
+  <h1>徐亦优<span>Yiyou Xu</span></h1>
+  <div class="bar"></div>
+  <div class="who">莫纳什大学 计算机科学 · Advanced Computer Science · 2027 届</div>
+  <div class="contact">yxuu0276@student.monash.edu · <a href="https://github.com/RGXeva">github.com/RGXeva</a></div>
+  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">分布式电动车充电网络仿真</div><div class="tg">C · Open MPI · OpenMP · 集群</div><div class="kp">告警往返延迟 <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">并行素数搜索与性能优化</div><div class="tg">C · MPI · OpenMP · 集群</div><div class="kp">16 进程加速比 <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit 网页游戏</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> 个测试，<b>21/21</b> 个注入故障被捕获</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite 解析与求解器</div><div class="tg">Haskell · 解析器组合子</div><div class="kp">完整 BNF 文法，<b>30 + 22</b> 个测试模型</div></div><div class="pc"><div class="no">05</div><div class="tt">量化研究工具链</div><div class="tg">Rust · Python · LEAN</div><div class="kp"><b>2025.12</b> 起独立开发，有实盘经验</div></div><div class="pc"><div class="no">06</div><div class="tt">GPU 图像旋转</div><div class="tg">CUDA · Numba</div><div class="kp">2048² 图像端到端快 <b>5.0×</b></div></div></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">01</div>
+  <div><h2>分布式电动车充电网络仿真</h2><div class="pmeta">两人课程项目 · 主要负责人，完成约 90% 的工作 · 2026.09 – 2026.10 · 代码 github.com/RGXeva/ev-charging-sim<span class="chips"><span class="chip">C</span><span class="chip">Open MPI</span><span class="chip">OpenMP</span><span class="chip">SLURM</span><span class="chip">Python</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 38%">
+    <p class="lead">把一片充电站模拟成分布式传感网络：充电站拥堵时先问邻居，邻居也满了，再请基站推荐最近的空闲站。</p>
+    <h3>我做了什么</h3>
+    <ul class="pts">
+      <li>比较 <b>8 种网络拓扑</b>后选定二维网格：每个充电站是一个 MPI 进程，用笛卡尔拓扑找上下左右邻居</li>
+      <li>每个充电桩是一个 OpenMP 线程，只写自己的槽位，<b>不加锁</b>也没有数据竞争</li>
+      <li>设计<b>非阻塞、按需触发</b>的邻居协议：用持久化接收随时应答邻居，避免死锁</li>
+      <li>基站在时间窗口内核对邻居状态，再按<b>曼哈顿环</b>由近及远找空闲站，一次返回同一距离的全部候选</li>
+      <li>实现优雅关停：基站广播终止，节点处理完手头事务后同步退出，回收线程、通信器和内存</li>
+      <li>负责架构设计、约 1500 行 C 代码、集群实验、PPT 和答辩展示</li>
+    </ul>
+  </div>
+  <div style="flex: 1">
+    <svg viewBox="0 0 600 350" width="600" height="350" font-family="Avenir Next, PingFang SC, sans-serif"><defs><marker id="aA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9831f"/></marker><marker id="aB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f5d8c"/></marker></defs><line x1="112" y1="145.0" x2="144" y2="145.0" stroke="#d7dee6" stroke-width="2"/><line x1="66.0" y1="174" x2="66.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="145.0" x2="268" y2="145.0" stroke="#d7dee6" stroke-width="2"/><line x1="190.0" y1="174" x2="190.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="314.0" y1="174" x2="314.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="223.0" x2="144" y2="223.0" stroke="#d7dee6" stroke-width="2"/><line x1="66.0" y1="252" x2="66.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="223.0" x2="268" y2="223.0" stroke="#d7dee6" stroke-width="2"/><line x1="190.0" y1="252" x2="190.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="314.0" y1="252" x2="314.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="301.0" x2="144" y2="301.0" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="301.0" x2="268" y2="301.0" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="145.0" x2="144" y2="145.0" stroke="#c9831f" stroke-width="2.5"/><line x1="66.0" y1="174" x2="66.0" y2="194" stroke="#c9831f" stroke-width="2.5"/><rect x="20" y="116" width="92" height="58" rx="9" fill="#fbecd5" stroke="#c9831f" stroke-width="1.6"/><text x="66.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 0</text><text x="66.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">拥堵 · 空闲 1/6</text><rect x="144" y="116" width="92" height="58" rx="9" fill="#eef1f4" stroke="#a3adb8" stroke-width="1.6"/><text x="190.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 1</text><text x="190.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">已满</text><rect x="268" y="116" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="314.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 2</text><text x="314.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">推荐</text><rect x="20" y="194" width="92" height="58" rx="9" fill="#eef1f4" stroke="#a3adb8" stroke-width="1.6"/><text x="66.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 3</text><text x="66.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">已满</text><rect x="144" y="194" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="190.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 4</text><text x="190.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">推荐</text><rect x="268" y="194" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="314.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 5</text><text x="314.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">(1,2)</text><rect x="20" y="272" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="66.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 6</text><text x="66.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">推荐</text><rect x="144" y="272" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="190.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 7</text><text x="190.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">(2,1)</text><rect x="268" y="272" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="314.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">充电站 8</text><text x="314.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">(2,2)</text><rect x="430" y="170" width="150" height="92" rx="12" fill="#1c2430"/><text x="505.0" y="204" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">基站</text><text x="505.0" y="224" font-size="10" fill="#b9c6d3" text-anchor="middle">时间窗口内核对邻居</text><text x="505.0" y="240" font-size="10" fill="#b9c6d3" text-anchor="middle">曼哈顿环搜索最近空闲站</text><path d="M78,116 C78,40 470,40 470,166" fill="none" stroke="#c9831f" stroke-width="2" marker-end="url(#aA)"/><path d="M542,170 C542,-2 44,-2 44,112" fill="none" stroke="#1f5d8c" stroke-width="2" marker-end="url(#aB)"/><text x="252" y="101" font-size="10.5" fill="#c9831f" font-weight="600" text-anchor="middle">② 邻居也满 → 发 ALERT 给基站（180 字节）</text><text x="265" y="16" font-size="10.5" fill="#1f5d8c" font-weight="600" text-anchor="middle">③ 基站回复 REDIRECT：去充电站 2、4、6</text><text x="128" y="188" font-size="10" fill="#c9831f">① 先问邻居</text></svg>
+    <div style="margin-top: 6px"><svg viewBox="0 0 600 92" width="600" height="92" font-family="Avenir Next, PingFang SC, sans-serif"><rect x="0.5" y="0.5" width="599" height="91" rx="10" fill="#f7f9fb" stroke="#d7dee6"/><text x="16" y="24" font-size="11" font-weight="600" fill="#1c2430">一个充电站内部 = 1 个 MPI 进程 + 7 个 OpenMP 线程</text><rect x="16" y="38" width="128" height="38" rx="7" fill="#1c2430"/><text x="80" y="55" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="600">线程 0：控制器</text><text x="80" y="69" font-size="9" fill="#b9c6d3" text-anchor="middle">唯一调用 MPI 的线程</text><rect x="172" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="197" y="54" font-size="10" fill="#fff" text-anchor="middle">桩 1</text><text x="197" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">占用</text><rect x="228" y="38" width="50" height="38" rx="7" fill="#ffffff" stroke="#d7dee6"/><text x="253" y="54" font-size="10" fill="#2f3946" text-anchor="middle">桩 2</text><text x="253" y="68" font-size="9" fill="#6b7684" text-anchor="middle">空闲</text><rect x="284" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="309" y="54" font-size="10" fill="#fff" text-anchor="middle">桩 3</text><text x="309" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">占用</text><rect x="340" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="365" y="54" font-size="10" fill="#fff" text-anchor="middle">桩 4</text><text x="365" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">占用</text><rect x="396" y="38" width="50" height="38" rx="7" fill="#ffffff" stroke="#d7dee6"/><text x="421" y="54" font-size="10" fill="#2f3946" text-anchor="middle">桩 5</text><text x="421" y="68" font-size="9" fill="#6b7684" text-anchor="middle">空闲</text><rect x="452" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="477" y="54" font-size="10" fill="#fff" text-anchor="middle">桩 6</text><text x="477" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">占用</text><text x="514" y="55" font-size="9.5" fill="#6b7684">每个线程只写</text><text x="514" y="69" font-size="9.5" fill="#6b7684">自己的槽位，无锁</text></svg></div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>2</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">01</div>
+  <div><h2>按实测选型，用数据找问题</h2><div class="pmeta">分布式电动车充电网络仿真 · 实验与工程质量<span class="chips"><span class="chip">CAAS 集群</span><span class="chip">ASan</span><span class="chip">UBSan</span><span class="chip">Python 分析脚本</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 47%">
+    <div class="card">
+      <div class="ctitle">发现轮询漏检，修复后告警延迟降低约六成</div>
+      <div class="csub">告警往返延迟中位数（ms），6×6 网格、37 个进程、3 台主机</div>
+      <svg viewBox="0 0 470 250" width="470" height="250" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="46" x2="458" y1="206.0" y2="206.0" stroke="#d7dee6" stroke-width="1"/><text x="38" y="209.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0</text><line x1="46" x2="458" y1="163.0" y2="163.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="166.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.25</text><line x1="46" x2="458" y1="120.0" y2="120.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="123.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.5</text><line x1="46" x2="458" y1="77.0" y2="77.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="80.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.75</text><line x1="46" x2="458" y1="34.0" y2="34.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="37.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">1</text><text x="38" y="20" font-size="10" fill="#6b7684" text-anchor="end">ms</text><path d="M83.66666666666667,206 v-135.3 q0,-4 4,-4 h22 q4,0 4,4 v135.3 z" fill="#a3adb8"/><path d="M115.66666666666667,206 v-51.0 q0,-4 4,-4 h22 q4,0 4,4 v51.0 z" fill="#1f5d8c"/><text x="98.7" y="60.7" font-size="11" fill="#2f3946" text-anchor="middle">0.81</text><text x="130.7" y="145.0" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">0.32</text><text x="114.7" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B1</text><text x="114.7" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">Iprobe + 阻塞收发</text><path d="M221.0,206 v-47.6 q0,-4 4,-4 h22 q4,0 4,4 v47.6 z" fill="#a3adb8"/><path d="M253.0,206 v-49.3 q0,-4 4,-4 h22 q4,0 4,4 v49.3 z" fill="#1f5d8c"/><text x="252.0" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B2</text><text x="252.0" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">Irecv + Test</text><path d="M358.33333333333337,206 v-133.6 q0,-4 4,-4 h22 q4,0 4,4 v133.6 z" fill="#a3adb8"/><path d="M390.33333333333337,206 v-54.5 q0,-4 4,-4 h22 q4,0 4,4 v54.5 z" fill="#1f5d8c"/><text x="373.3" y="62.4" font-size="11" fill="#2f3946" text-anchor="middle">0.80</text><text x="405.3" y="141.5" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">0.34</text><text x="389.3" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B3</text><text x="389.3" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">持久化接收 + Testsome</text><rect x="50" y="6" width="10" height="10" rx="2" fill="#a3adb8"/><text x="65" y="15" font-size="10.5" fill="#2f3946">修复前：一次空轮询就休眠</text><rect x="222" y="6" width="10" height="10" rx="2" fill="#1f5d8c"/><text x="237" y="15" font-size="10.5" fill="#2f3946">修复后：再轮询一次才休眠</text></svg>
+      <div class="note">一次空轮询就休眠，会漏掉轮询期间刚到的消息。改成“再轮询一次才休眠”后，B1 和 B3 的延迟都降了一半以上；B2 的接口本身会重新检查，所以本来就快。</div>
+    </div>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <div class="card">
+      <div class="ctitle">三种节点方案，按实测选用 N2</div>
+      <table class="t">
+        <tr><th>节点方案</th><th class="n">每节点每周期消息数</th><th class="n">关停耗时</th></tr>
+        <tr><td>N1 · 每周期阻塞 Sendrecv</td><td class="n">3.39</td><td class="n">277 ms</td></tr>
+        <tr class="sel"><td>N2 · 非阻塞、按需触发（选用）</td><td class="n">1.97</td><td class="n">84 ms</td></tr>
+        <tr><td>N3 · 每周期 Neighbor_allgather</td><td class="n">3.39</td><td class="n">279 ms</td></tr>
+      </table>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">32/32</div><div class="lab">自动化测试在集群上全部通过</div></div>
+      <div class="stat"><div class="num">0</div><div class="lab">ASan、UBSan、LeakSanitizer 在自己代码中发现的错误</div></div>
+      <div class="stat"><div class="num">400+</div><div class="lab">次实验，本地与集群（最多 5 节点 × 16 核）</div></div>
+    </div>
+    <div class="term"><div class="bar"><i></i><i></i><i></i><span style="margin-left: 6px">学校 CAAS 集群实机运行 · 3×3 网格 + 基站</span></div><div class="cmd">$ bash scripts/demo_caas.sh</div><div class="dim">srun: job 197921 has been allocated resources</div><div class="">[base t=  2.500s] alert #1 node 8 (2,2) free 1/6 -&gt; suggest nearest available: 2(0,2) 4(1,1) 6(2,0)</div><div class="">[base t=  6.500s] alert #2 node 6 (2,0) free 1/6 -&gt; no available node nearby</div><div class="">[base t=  7.501s] alert #1 node 2 (0,2) free 0/6 -&gt; suggest nearest available: 0(0,0)</div><div class="dim">  ...</div><div class="hi">[base] 3x3 N2/B2: 20.10 s, 23 alerts (20 candidates, 3 none nearby), 101 local redirects, 725 messages</div><div class="hi">[base] neighbour exchange median 0.274 ms | alert round trip median 0.267 ms | shutdown 96.497 ms</div></div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>3</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">02</div>
+  <div><h2>并行素数搜索：先找瓶颈，再修掉它</h2><div class="pmeta">两人课程项目 · 主要负责人，完成约 90% 的工作 · 2026.08 – 2026.09<span class="chips"><span class="chip">C</span><span class="chip">MPI</span><span class="chip">OpenMP</span><span class="chip">Pthreads</span><span class="chip">SLURM</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 52%">
+    <div class="card" style="padding-bottom: 6px">
+      <div class="ctitle">加速比随工作进程数的变化</div>
+      <div class="csub">与串行版相比，集群实测中位数；虚线为用实测串行比例建立的 Amdahl 模型</div>
+      <svg viewBox="0 0 560 360" width="560" height="360" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="44" x2="468" y1="320.0" y2="320.0" stroke="#d7dee6"/><text x="36" y="323.5" font-size="10" fill="#6b7684" text-anchor="end">0×</text><text x="44.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">0</text><line x1="44" x2="468" y1="245.0" y2="245.0" stroke="#e6ebf0"/><text x="36" y="248.5" font-size="10" fill="#6b7684" text-anchor="end">8×</text><text x="150.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">8</text><line x1="44" x2="468" y1="170.0" y2="170.0" stroke="#e6ebf0"/><text x="36" y="173.5" font-size="10" fill="#6b7684" text-anchor="end">16×</text><text x="256.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">16</text><line x1="44" x2="468" y1="95.0" y2="95.0" stroke="#e6ebf0"/><text x="36" y="98.5" font-size="10" fill="#6b7684" text-anchor="end">24×</text><text x="362.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">24</text><line x1="44" x2="468" y1="20.0" y2="20.0" stroke="#e6ebf0"/><text x="36" y="23.5" font-size="10" fill="#6b7684" text-anchor="end">32×</text><text x="468.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">32</text><text x="256.0" y="354" font-size="10.5" fill="#6b7684" text-anchor="middle">工作进程或线程总数（n = 8000 万）</text><line x1="256.0" x2="256.0" y1="20" y2="320" stroke="#d7dee6"/><text x="250.0" y="30" font-size="9.5" fill="#6b7684" text-anchor="end">1 个节点</text><text x="262.0" y="30" font-size="9.5" fill="#6b7684">2 个节点</text><line x1="44.0" y1="320.0" x2="468.0" y2="20.0" stroke="#a3adb8" stroke-width="1"/><path d="M57.2,310.6 L70.5,301.1 L97.0,282.4 L123.5,263.8 L150.0,245.3 L203.0,208.6 L256.0,172.4 L309.0,136.6 L362.0,101.2 L415.0,66.3 L468.0,31.8" fill="none" stroke="#6b7684" stroke-width="1.5" stroke-dasharray="5 4"/><path d="M150.0,265.6 L256.0,213.6" fill="none" stroke="#a3adb8" stroke-width="2"/><circle cx="150.0" cy="265.6" r="4.5" fill="#a3adb8" stroke="#fff" stroke-width="2"/><circle cx="256.0" cy="213.6" r="4.5" fill="#a3adb8" stroke="#fff" stroke-width="2"/><text x="264.0" y="227.6" font-size="10.5" fill="#2f3946">11.4×</text><path d="M57.2,310.6 L70.5,301.2 L97.0,282.5 L123.5,263.9 L150.0,245.5 L203.0,209.2 L256.0,173.5 L362.0,113.0 L468.0,67.9" fill="none" stroke="#1f5d8c" stroke-width="2"/><circle cx="57.2" cy="310.6" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="70.5" cy="301.2" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="97.0" cy="282.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="123.5" cy="263.9" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="150.0" cy="245.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="203.0" cy="209.2" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="256.0" cy="173.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="362.0" cy="113.0" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="468.0" cy="67.9" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><text x="264.0" y="167.5" font-size="10.5" fill="#1c2430" font-weight="600">15.6×</text><text x="478.0" y="71.9" font-size="10.5" fill="#1c2430">26.9×</text><path d="M468.0,36.0 l6,6 l-6,6 l-6,-6 z" fill="#fff" stroke="#1f5d8c" stroke-width="2"/><text x="478.0" y="44.0" font-size="10.5" fill="#1c2430" font-weight="600">29.7×</text><rect x="48" y="28" width="196" height="90" rx="6" fill="#ffffff" fill-opacity="0.92"/><line x1="56" x2="76" y1="38" y2="38" stroke="#1f5d8c" stroke-width="2"/><circle cx="66" cy="38" r="3.5" fill="#1f5d8c" stroke="#fff" stroke-width="1.5"/><text x="84" y="42" font-size="10" fill="#2f3946">MPI 块循环分配（实测）</text><line x1="56" x2="76" y1="54" y2="54" stroke="#a3adb8" stroke-width="2"/><circle cx="66" cy="54" r="3.5" fill="#a3adb8" stroke="#fff" stroke-width="1.5"/><text x="84" y="58" font-size="10" fill="#2f3946">MPI 连续分块（实测）</text><path d="M66,65 l5,5 l-5,5 l-5,-5 z" fill="#fff" stroke="#1f5d8c" stroke-width="2"/><text x="84" y="74" font-size="10" fill="#2f3946">MPI+OpenMP 混合 4×8（实测）</text><line x1="56" x2="76" y1="86" y2="86" stroke="#6b7684" stroke-width="1.5" stroke-dasharray="5 4"/><text x="84" y="90" font-size="10" fill="#2f3946">Amdahl 模型</text><line x1="56" x2="76" y1="102" y2="102" stroke="#a3adb8" stroke-width="1"/><text x="84" y="106" font-size="10" fill="#2f3946">理想线性</text></svg>
+    </div>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <p class="lead" style="margin: 0">从串行版本出发，依次写出 Pthreads、OpenMP、MPI 和 MPI+OpenMP 混合版本，每一步都先测量、再优化。</p>
+    <div class="card">
+      <div class="ctitle">瓶颈一：负载不均</div>
+      <div class="note">数越大，试除次数越多，连续分块让最后一个进程最累。改成 4096 个数一块、轮流分配后，最慢进程与平均进程之比 <b>1.41 → 1.00</b>，16 进程加速比 <b>11.4× → 15.6×</b>。</div>
+    </div>
+    <div class="card">
+      <div class="ctitle">瓶颈二：0 号进程串行输出</div>
+      <div class="note">试验中发现格式化输出全压在 0 号进程上。改成各进程格式化自己的结果、0 号只负责写文件后，试验加速比 <b>12.2× → 15.1×</b>。</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">873</div><div class="lab">次计时运行，覆盖 245 组配置</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lab">输出与独立筛法结果逐一比对一致</div></div>
+      <div class="stat"><div class="num">0.16%</div><div class="lab">实测串行比例；单节点模型与实测相差不到 1%</div></div>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>4</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">03</div>
+  <div><h2>Flippy Bit：函数式响应式网页游戏</h2><div class="pmeta">个人课程作业 · 2026.08 – 2026.09 · 在线试玩 rgxeva.github.io/flippy-bit<span class="chips"><span class="chip">TypeScript</span><span class="chip">RxJS</span><span class="chip">Vite</span><span class="chip">Vitest</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 44%"><div class="shot"><img src="img/f_play.png"></div></div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 11px">
+    <p class="lead" style="margin: 0">十六进制数字不断下落，玩家要在它落到虚线前，把底部 8 个二进制位翻成同一个值。</p>
+    <div>
+      <h3>全部状态放在一条数据流里</h3>
+      <div class="flow"><div class="step"><b>五路事件</b><span>时钟、键盘、鼠标、暂停、重开</span></div><div class="arrow">→</div><div class="step"><b>统一为动作</b><span>每个事件映射成 Action</span></div><div class="arrow">→</div><div class="step"><b>merge + scan</b><span>折叠成唯一的游戏状态</span></div><div class="arrow">→</div><div class="step last"><b>render()</b><span>唯一有副作用的地方</span></div></div>
+      <div class="note" style="margin-top: 6px">游戏规则全部是纯函数，不碰 DOM、不读时钟，所以测试能在 Node 里直接驱动上百个时间步。</div>
+    </div>
+    <div>
+      <h3>用变异测试检验测试本身</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">87</div><div class="lab">个测试覆盖纯函数模块和事件流</div></div>
+        <div class="stat"><div class="num">21/21</div><div class="lab">个故意注入的故障全部被测试抓到</div></div>
+        <div class="stat"><div class="num">+2</div><div class="lab">个测试：变异测试暴露出的盲区已补上</div></div>
+      </div>
+      <div class="note" style="margin-top: 6px">注入的故障包括判错目标、去掉速度上限、位序颠倒、原地修改状态等。其中“原地修改目标高度”第一轮没被抓到，原因是不可变性测试只检查了初始状态，于是补上了逐帧快照检查。</div>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>5</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">04</div>
+  <div><h2>MiniZinc-Lite：约束模型解析与求解器</h2><div class="pmeta">个人课程作业 · 2026.10 – 2026.11<span class="chips"><span class="chip">Haskell</span><span class="chip">解析器组合子</span><span class="chip">BNF</span><span class="chip">TypeScript 前端</span></span></div></div>
+</div>
+<p class="lead">读入一段约束建模语言，解析成语法树，检查名字和作用域，再求出全部可行解或最优解。</p>
+<div class="flow"><div class="step"><b>模型文本</b><span>.mzn 源文件</span></div><div class="arrow">→</div><div class="step"><b>解析器组合子</b><span>按 BNF 逐条实现</span></div><div class="arrow">→</div><div class="step"><b>语义检查</b><span>未声明、重复声明等文法表达不了的规则</span></div><div class="arrow">→</div><div class="step"><b>语法树</b><span>声明、约束、目标</span></div><div class="arrow">→</div><div class="step last"><b>求解</b><span>全部可行解，或最大化、最小化</span></div></div>
+<div class="cols" style="margin-top: 14px; align-items: flex-start">
+  <div style="width: 40%">
+    <div class="csub">输入：6 皇后问题</div>
+    <pre class="code"><span class="k">int</span>: n = 6;
+array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
+
+<span class="k">constraint</span> <span class="k">allDifferent</span>(q);
+<span class="k">constraint</span> <span class="k">allDifferent</span>(i in 1..n)(q[i] + i);
+<span class="k">constraint</span> <span class="k">allDifferent</span>(i in 1..n)(q[i] - i);
+
+<span class="k">solve</span> <span class="k">satisfy</span>;</pre>
+  </div>
+  <div style="width: 22%">
+    <div class="csub">求出的第一组解</div>
+    <svg viewBox="0 0 156 156" width="195" height="195"><rect x="0" y="0" width="26" height="26" fill="#ffffff"/><rect x="26" y="0" width="26" height="26" fill="#e9eef3"/><rect x="52" y="0" width="26" height="26" fill="#ffffff"/><rect x="78" y="0" width="26" height="26" fill="#e9eef3"/><rect x="104" y="0" width="26" height="26" fill="#ffffff"/><rect x="130" y="0" width="26" height="26" fill="#e9eef3"/><rect x="0" y="26" width="26" height="26" fill="#e9eef3"/><rect x="26" y="26" width="26" height="26" fill="#ffffff"/><rect x="52" y="26" width="26" height="26" fill="#e9eef3"/><rect x="78" y="26" width="26" height="26" fill="#ffffff"/><rect x="104" y="26" width="26" height="26" fill="#e9eef3"/><rect x="130" y="26" width="26" height="26" fill="#ffffff"/><rect x="0" y="52" width="26" height="26" fill="#ffffff"/><rect x="26" y="52" width="26" height="26" fill="#e9eef3"/><rect x="52" y="52" width="26" height="26" fill="#ffffff"/><rect x="78" y="52" width="26" height="26" fill="#e9eef3"/><rect x="104" y="52" width="26" height="26" fill="#ffffff"/><rect x="130" y="52" width="26" height="26" fill="#e9eef3"/><rect x="0" y="78" width="26" height="26" fill="#e9eef3"/><rect x="26" y="78" width="26" height="26" fill="#ffffff"/><rect x="52" y="78" width="26" height="26" fill="#e9eef3"/><rect x="78" y="78" width="26" height="26" fill="#ffffff"/><rect x="104" y="78" width="26" height="26" fill="#e9eef3"/><rect x="130" y="78" width="26" height="26" fill="#ffffff"/><rect x="0" y="104" width="26" height="26" fill="#ffffff"/><rect x="26" y="104" width="26" height="26" fill="#e9eef3"/><rect x="52" y="104" width="26" height="26" fill="#ffffff"/><rect x="78" y="104" width="26" height="26" fill="#e9eef3"/><rect x="104" y="104" width="26" height="26" fill="#ffffff"/><rect x="130" y="104" width="26" height="26" fill="#e9eef3"/><rect x="0" y="130" width="26" height="26" fill="#e9eef3"/><rect x="26" y="130" width="26" height="26" fill="#ffffff"/><rect x="52" y="130" width="26" height="26" fill="#e9eef3"/><rect x="78" y="130" width="26" height="26" fill="#ffffff"/><rect x="104" y="130" width="26" height="26" fill="#e9eef3"/><rect x="130" y="130" width="26" height="26" fill="#ffffff"/><circle cx="13.0" cy="39.0" r="8" fill="#1f5d8c"/><circle cx="39.0" cy="91.0" r="8" fill="#1f5d8c"/><circle cx="65.0" cy="143.0" r="8" fill="#1f5d8c"/><circle cx="91.0" cy="13.0" r="8" fill="#1f5d8c"/><circle cx="117.0" cy="65.0" r="8" fill="#1f5d8c"/><circle cx="143.0" cy="117.0" r="8" fill="#1f5d8c"/><rect x="0.5" y="0.5" width="155" height="155" fill="none" stroke="#d7dee6"/></svg>
+    <pre class="code" style="margin-top: 8px; font-size: 7.6pt">[("q[1]",2),("q[2]",4),("q[3]",6),
+ ("q[4]",1),("q[5]",3),("q[6]",5)]
+… 共 4 组解</pre>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <div class="stats" style="flex-direction: column">
+      <div class="stat"><div class="num">30</div><div class="lab">个样例模型，测试比对求解结果与标准答案</div></div>
+      <div class="stat"><div class="num">22</div><div class="lab">个非法模型，测试检查解析器能正确拒绝</div></div>
+    </div>
+    <div class="note">配套一个网页前端：左侧输入模型，右侧实时显示求解结果，可一键保存解。</div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>6</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">05</div>
+  <div><h2>量化研究工具链</h2><div class="pmeta">个人项目 · 独立负责设计、开发与研究 · 2025.12 至今<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
+</div>
+<p class="lead">从 2025 年 12 月起一个人持续开发两套研究工具链，并有实盘交易经验。下面只展示工程结构，策略细节和收益不公开。</p>
+<h3>数字资产研究工具链（Rust 重构）</h3>
+<div class="flow"><div class="step"><b>行情归档</b><span>原始行情数据存档</span></div><div class="arrow">→</div><div class="step"><b>标准化</b><span>统一不同来源的格式</span></div><div class="arrow">→</div><div class="step"><b>历史回放</b><span>按事件时间重放市场</span></div><div class="arrow">→</div><div class="step"><b>策略与因子</b><span>用 Tardis 数据挖因子、回测评估</span></div><div class="arrow">→</div><div class="step last"><b>执行与风控模拟</b><span>成交与风控的模拟检查</span></div></div>
+<div style="height: 14px"></div>
+<h3>美股研究与回测平台（LEAN）</h3>
+<div class="flow"><div class="step"><b>数据校验</b><span>行情数据质量检查</span></div><div class="arrow">→</div><div class="step"><b>特征</b><span>研究用特征</span></div><div class="arrow">→</div><div class="step"><b>信号</b><span>策略信号</span></div><div class="arrow">→</div><div class="step"><b>交易成本</b><span>手续费等成本假设</span></div><div class="arrow">→</div><div class="step last"><b>订单处理接口</b><span>与券商实盘权限隔离</span></div></div>
+<div class="cols" style="margin-top: 16px">
+  <div class="card" style="flex: 1">
+    <div class="ctitle">重点检查的工程问题</div>
+    <div class="note">事件顺序 · 数量精度 · 手续费假设 · 异常处理 · 结果可复现。需求拆解、测试用例和代码审查与 AI 编程助手配合完成，生成的代码都经人工审查和测试验证。</div>
+  </div>
+  <div class="card" style="flex: 1">
+    <div class="ctitle">因子研究</div>
+    <div class="note">熟悉世坤 WorldQuant BRAIN 和 Qlib，做过因子构建和回测评估；用 Tardis 历史数据做因子挖掘。</div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>7</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">06</div>
+  <div><h2>GPU 图像旋转</h2><div class="pmeta">两人课程项目 · 2026.10<span class="chips"><span class="chip">CUDA</span><span class="chip">Numba</span><span class="chip">Python</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 46%">
+    <p class="lead">用 GPU 并行旋转图片：一个线程负责一个输出像素，按逆映射去原图取像素，每个线程只写自己的位置，不需要原子操作。</p>
+    <ul class="pts">
+      <li>16 × 16 的线程块，网格按图片尺寸向上取整；越界线程在边界检查处直接退出</li>
+      <li>计时覆盖“拷入显存 → 核函数 → 拷回内存”整条链路，和编译后的 CPU 版本对比</li>
+      <li>每次运行都与 CPU 结果核对，所有试验结果一致</li>
+      <li>图越大，数据搬运占比越低，GPU 优势越明显</li>
+    </ul>
+  </div>
+  <div style="flex: 1">
+    <div class="card">
+      <div class="ctitle">端到端加速比（含显存拷贝）</div>
+      <div class="csub">旋转 30°，与单核 CPU 版本相比，5 次运行中位数</div>
+      <svg viewBox="0 0 360 210" width="360" height="210" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="40" x2="346" y1="170.0" y2="170.0" stroke="#d7dee6"/><text x="32" y="173.5" font-size="10" fill="#6b7684" text-anchor="end">0×</text><line x1="40" x2="346" y1="120.7" y2="120.7" stroke="#e6ebf0"/><text x="32" y="124.2" font-size="10" fill="#6b7684" text-anchor="end">2×</text><line x1="40" x2="346" y1="71.3" y2="71.3" stroke="#e6ebf0"/><text x="32" y="74.8" font-size="10" fill="#6b7684" text-anchor="end">4×</text><line x1="40" x2="346" y1="22.0" y2="22.0" stroke="#e6ebf0"/><text x="32" y="25.5" font-size="10" fill="#6b7684" text-anchor="end">6×</text><path d="M74.0,170 v-46.8 q0,-4 4,-4 h26 q4,0 4,4 v46.8 z" fill="#1f5d8c"/><text x="91.0" y="112.2" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">2.1×</text><text x="91.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">512²</text><text x="91.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">2.41 → 1.17 ms</text><path d="M176.0,170 v-102.3 q0,-4 4,-4 h26 q4,0 4,4 v102.3 z" fill="#1f5d8c"/><text x="193.0" y="56.7" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">4.3×</text><text x="193.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">1024²</text><text x="193.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">11.29 → 2.62 ms</text><path d="M278.0,170 v-119.3 q0,-4 4,-4 h26 q4,0 4,4 v119.3 z" fill="#1f5d8c"/><text x="295.0" y="39.7" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">5.0×</text><text x="295.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">2048²</text><text x="295.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">39.85 → 7.97 ms</text></svg>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>8</span></div>
+</section><script>
+// Pages are laid out at their print width (320 mm); shrink them to fit small screens.
+(function () {
+  var PAGE_PX = 320 / 25.4 * 96;
+  function fit() {
+    // On phones the wide page stretches innerWidth, so the screen width is the real limit.
+    var vw = Math.min(window.innerWidth, (window.screen && screen.width) || window.innerWidth);
+    var z = Math.min(1, (vw - 24) / PAGE_PX);
+    document.querySelectorAll('.page').forEach(function (p) { p.style.zoom = z; });
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</body></html>

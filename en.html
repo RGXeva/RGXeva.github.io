@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Yiyou Xu – Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Yiyou Xu · Portfolio: distributed systems, parallel computing, functional programming and quant research projects.">
+<style>
+@media screen {
+  html { background: #e6eaef; }
+  body { padding: 72px 0 40px; }
+  .page { margin: 0 auto 28px; border-radius: 6px; box-shadow: 0 12px 34px rgba(15, 30, 51, .18); }
+  .topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 52px; padding: 0 22px;
+             display: flex; align-items: center; justify-content: space-between;
+             background: rgba(15, 30, 51, .94); color: #fff; backdrop-filter: blur(8px);
+             font-family: "Avenir Next", "PingFang SC", sans-serif; font-size: 14px; }
+  .topnav .brand { font-weight: 600; letter-spacing: .5px; }
+  .topnav a { color: #cfe3f5; text-decoration: none; margin-left: 20px; }
+  .topnav a:hover { color: #fff; }
+}
+@media screen and (max-width: 640px) {
+  body { padding-top: 60px; }
+  .topnav { padding: 0 12px; font-size: 13px; }
+  .topnav a { margin-left: 12px; }
+}
+@media print { .topnav { display: none; } }
+</style><style>
+@page { size: 320mm 180mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif; color: #2f3946;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 320mm; height: 180mm; padding: 13mm 15mm 11mm; position: relative; overflow: hidden;
+        page-break-after: always; break-after: page; background: #fff; }
+.page:last-child { page-break-after: auto; }
+.foot { position: absolute; left: 15mm; right: 15mm; bottom: 6mm; display: flex; justify-content: space-between;
+        font-size: 8.5pt; color: #6b7684; }
+.phead { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.pno { font-size: 26pt; font-weight: 600; color: #1f5d8c; line-height: 1; padding-top: 2px; letter-spacing: -.5px; }
+h2 { font-size: 20pt; font-weight: 600; color: #1c2430; line-height: 1.15; }
+.pmeta { margin-top: 5px; font-size: 9.5pt; color: #6b7684; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.chips { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.chip { font-size: 8pt; color: #1f5d8c; background: #eaf1f7; border-radius: 3px; padding: 1px 6px; }
+.cols { display: flex; gap: 26px; }
+.cols > div { min-width: 0; }
+.lead { font-size: 11.5pt; color: #1c2430; line-height: 1.6; margin-bottom: 12px; }
+h3 { font-size: 10.5pt; font-weight: 600; color: #1f5d8c; letter-spacing: 1px; margin: 4px 0 7px; }
+ul.pts { list-style: none; }
+ul.pts li { position: relative; padding-left: 13px; font-size: 9.8pt; line-height: 1.55; margin-bottom: 5px; }
+ul.pts li::before { content: ""; position: absolute; left: 1px; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: #1f5d8c; }
+b { color: #1c2430; font-weight: 600; }
+.stats { display: flex; gap: 10px; }
+.stat { flex: 1; background: #f5f8fb; border-radius: 8px; padding: 10px 12px; }
+.stat .num { font-size: 18pt; font-weight: 600; color: #1f5d8c; line-height: 1.1; }
+.stat .lab { font-size: 8.8pt; color: #6b7684; margin-top: 3px; line-height: 1.35; }
+.card { border: 1px solid #d7dee6; border-radius: 10px; padding: 12px 14px; }
+.ctitle { font-size: 10.5pt; font-weight: 600; color: #1c2430; margin-bottom: 2px; }
+.csub { font-size: 8.8pt; color: #6b7684; margin-bottom: 6px; }
+table.t { border-collapse: collapse; width: 100%; font-size: 9.3pt; }
+table.t th { text-align: left; font-weight: 600; color: #6b7684; font-size: 8.5pt; border-bottom: 1px solid #d7dee6; padding: 4px 6px; }
+table.t td { padding: 5px 6px; border-bottom: 1px solid #e6ebf0; font-variant-numeric: tabular-nums; }
+table.t td.n { text-align: right; } table.t th.n { text-align: right; }
+table.t tr.sel td { background: #eaf1f7; color: #1c2430; font-weight: 600; }
+.term { background: #0f1a2a; border-radius: 10px; padding: 0 0 10px; font-family: "SF Mono", Menlo, monospace; font-size: 7.1pt; line-height: 1.55; color: #c6d3e0; overflow: hidden; }
+.term .bar { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: #16253a; color: #8ea4ba; font-family: "Avenir Next", "PingFang SC", sans-serif; font-size: 8.5pt; margin-bottom: 8px; }
+.term .bar i { width: 8px; height: 8px; border-radius: 50%; background: #2d4462; display: inline-block; }
+.term > div:not(.bar) { padding: 0 12px 0 26px; text-indent: -14px; white-space: pre-wrap; }
+.term .cmd { color: #ffffff; } .term .dim { color: #6f849a; } .term .hi { color: #8fc6f2; }
+.flow { display: flex; align-items: stretch; gap: 6px; }
+.flow .step { flex: 1; border: 1px solid #d7dee6; border-radius: 8px; padding: 8px 9px; background: #fff; }
+.flow .step b { display: block; font-size: 9.5pt; }
+.flow .step span { display: block; font-size: 8.3pt; color: #6b7684; margin-top: 2px; line-height: 1.35; }
+.flow .step.last { background: #1c2430; border-color: #1c2430; }
+.flow .step.last b { color: #fff; } .flow .step.last span { color: #b9c6d3; }
+.flow .arrow { display: flex; align-items: center; color: #a3adb8; font-size: 13pt; }
+pre.code { background: #f5f8fb; border-radius: 8px; padding: 10px 12px; font-family: "SF Mono", Menlo, monospace; font-size: 8.4pt; line-height: 1.55; color: #1c2430; white-space: pre; }
+pre.code .k { color: #1f5d8c; font-weight: 600; }
+.shot { border-radius: 12px; overflow: hidden; box-shadow: 0 6px 22px rgba(15, 30, 51, .18); }
+.shot img { display: block; width: 100%; }
+.note { font-size: 8.6pt; color: #6b7684; line-height: 1.45; }
+/* cover */
+.cover { background: radial-gradient(circle at 85% 10%, #1b3354 0%, #0f1e33 55%); color: #fff; }
+.cover .kicker { font-size: 9.5pt; letter-spacing: 4px; color: #3d8fd1; font-weight: 600; }
+.cover h1 { font-size: 40pt; font-weight: 600; letter-spacing: 1px; margin-top: 8px; line-height: 1.1; }
+.cover h1 span { font-size: 18pt; letter-spacing: .5px; color: #9fb6cc; font-weight: 500; margin-left: 14px; }
+.cover .who { margin-top: 10px; font-size: 11pt; color: #c6d3e0; }
+.cover .contact { margin-top: 4px; font-size: 10pt; color: #8ea4ba; }
+.cover .contact a { color: #8fc6f2; text-decoration: none; }
+.cover .bar { width: 56px; height: 3px; background: #3d8fd1; border-radius: 2px; margin: 16px 0 0; }
+.grid6 { position: absolute; left: 15mm; right: 15mm; bottom: 13mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.pc { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 10px; padding: 11px 13px; }
+.pc .no { font-size: 9pt; color: #3d8fd1; font-weight: 600; letter-spacing: 1px; }
+.pc .tt { font-size: 11.5pt; font-weight: 600; margin-top: 3px; }
+.pc .tg { font-size: 8.5pt; color: #8ea4ba; margin-top: 2px; }
+.pc .kp { font-size: 10pt; color: #dbe7f2; margin-top: 7px; }
+.pc .kp b { color: #8fc6f2; font-weight: 600; }
+</style></head>
+<body>
+<nav class="topnav"><span class="brand">Yiyou Xu · Portfolio</span><span>
+<a href="index.html">中文</a><a href="portfolio-en.pdf">Download PDF</a><a href="https://github.com/RGXeva">GitHub</a>
+</span></nav><section class="page cover">
+  <div class="kicker">PORTFOLIO</div>
+  <h1>Yiyou Xu</h1>
+  <div class="bar"></div>
+  <div class="who">Monash University · Computer Science (Advanced Computer Science) · Class of 2027</div>
+  <div class="contact">yxuu0276@student.monash.edu · <a href="https://github.com/RGXeva">github.com/RGXeva</a></div>
+  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">Distributed EV Charging Network</div><div class="tg">C · Open MPI · OpenMP · Cluster</div><div class="kp">Alert round trip <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">Parallel Prime Search</div><div class="tg">C · MPI · OpenMP · Cluster</div><div class="kp">16-process speed-up <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit Web Game</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> tests, <b>21/21</b> injected faults caught</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite Parser &amp; Solver</div><div class="tg">Haskell · Parser combinators</div><div class="kp">Full BNF grammar, <b>30 + 22</b> test models</div></div><div class="pc"><div class="no">05</div><div class="tt">Quant Research Toolchains</div><div class="tg">Rust · Python · LEAN</div><div class="kp">Solo since <b>Dec 2025</b>, live trading</div></div><div class="pc"><div class="no">06</div><div class="tt">GPU Image Rotation</div><div class="tg">CUDA · Numba</div><div class="kp"><b>5.0×</b> faster end to end at 2048²</div></div></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">01</div>
+  <div><h2>Distributed EV Charging Network Simulation</h2><div class="pmeta">Two-person course project · Lead, about 90% of the work · Sep – Oct 2026 · Code github.com/RGXeva/ev-charging-sim<span class="chips"><span class="chip">C</span><span class="chip">Open MPI</span><span class="chip">OpenMP</span><span class="chip">SLURM</span><span class="chip">Python</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 38%">
+    <p class="lead">A grid of charging stations simulated as a distributed sensor network. A congested station asks its neighbours first; only when they are full too does it ask the base station for the nearest free one.</p>
+    <h3>WHAT I BUILT</h3>
+    <ul class="pts">
+      <li>Compared <b>8 network topologies</b> and chose a 2-D grid: one MPI process per station, with neighbours found through a Cartesian topology</li>
+      <li>One OpenMP thread per charging port, each writing only its own slot: <b>no locks</b> and no data races</li>
+      <li>Designed a <b>non-blocking, on-demand</b> neighbour protocol; persistent receives answer neighbours at any time, so it cannot deadlock</li>
+      <li>The base station checks neighbour reports within a time window, then searches <b>Manhattan rings</b> outwards and returns every free station at the nearest distance</li>
+      <li>Graceful shutdown: the base broadcasts TERMINATE, nodes finish open work and exit together, then free threads, communicators and memory</li>
+      <li>Owned the architecture, about 1,500 lines of C, cluster experiments, slides and the presentation</li>
+    </ul>
+  </div>
+  <div style="flex: 1">
+    <svg viewBox="0 0 600 350" width="600" height="350" font-family="Avenir Next, PingFang SC, sans-serif"><defs><marker id="aA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9831f"/></marker><marker id="aB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f5d8c"/></marker></defs><line x1="112" y1="145.0" x2="144" y2="145.0" stroke="#d7dee6" stroke-width="2"/><line x1="66.0" y1="174" x2="66.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="145.0" x2="268" y2="145.0" stroke="#d7dee6" stroke-width="2"/><line x1="190.0" y1="174" x2="190.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="314.0" y1="174" x2="314.0" y2="194" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="223.0" x2="144" y2="223.0" stroke="#d7dee6" stroke-width="2"/><line x1="66.0" y1="252" x2="66.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="223.0" x2="268" y2="223.0" stroke="#d7dee6" stroke-width="2"/><line x1="190.0" y1="252" x2="190.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="314.0" y1="252" x2="314.0" y2="272" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="301.0" x2="144" y2="301.0" stroke="#d7dee6" stroke-width="2"/><line x1="236" y1="301.0" x2="268" y2="301.0" stroke="#d7dee6" stroke-width="2"/><line x1="112" y1="145.0" x2="144" y2="145.0" stroke="#c9831f" stroke-width="2.5"/><line x1="66.0" y1="174" x2="66.0" y2="194" stroke="#c9831f" stroke-width="2.5"/><rect x="20" y="116" width="92" height="58" rx="9" fill="#fbecd5" stroke="#c9831f" stroke-width="1.6"/><text x="66.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 0</text><text x="66.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">Congested · 1/6</text><rect x="144" y="116" width="92" height="58" rx="9" fill="#eef1f4" stroke="#a3adb8" stroke-width="1.6"/><text x="190.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 1</text><text x="190.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">Full</text><rect x="268" y="116" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="314.0" y="139" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 2</text><text x="314.0" y="156" font-size="10" fill="#6b7684" text-anchor="middle">Suggested</text><rect x="20" y="194" width="92" height="58" rx="9" fill="#eef1f4" stroke="#a3adb8" stroke-width="1.6"/><text x="66.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 3</text><text x="66.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">Full</text><rect x="144" y="194" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="190.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 4</text><text x="190.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">Suggested</text><rect x="268" y="194" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="314.0" y="217" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 5</text><text x="314.0" y="234" font-size="10" fill="#6b7684" text-anchor="middle">(1,2)</text><rect x="20" y="272" width="92" height="58" rx="9" fill="#eaf1f7" stroke="#1f5d8c" stroke-width="1.6"/><text x="66.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 6</text><text x="66.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">Suggested</text><rect x="144" y="272" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="190.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 7</text><text x="190.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">(2,1)</text><rect x="268" y="272" width="92" height="58" rx="9" fill="#ffffff" stroke="#d7dee6" stroke-width="1.6"/><text x="314.0" y="295" font-size="12.5" font-weight="600" fill="#1c2430" text-anchor="middle">Station 8</text><text x="314.0" y="312" font-size="10" fill="#6b7684" text-anchor="middle">(2,2)</text><rect x="430" y="170" width="150" height="92" rx="12" fill="#1c2430"/><text x="505.0" y="204" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Base station</text><text x="505.0" y="224" font-size="10" fill="#b9c6d3" text-anchor="middle">Checks neighbours in window</text><text x="505.0" y="240" font-size="10" fill="#b9c6d3" text-anchor="middle">Nearest-ring search</text><path d="M78,116 C78,40 470,40 470,166" fill="none" stroke="#c9831f" stroke-width="2" marker-end="url(#aA)"/><path d="M542,170 C542,-2 44,-2 44,112" fill="none" stroke="#1f5d8c" stroke-width="2" marker-end="url(#aB)"/><text x="252" y="101" font-size="10.5" fill="#c9831f" font-weight="600" text-anchor="middle">② Neighbours full → ALERT to base (180 B)</text><text x="265" y="16" font-size="10.5" fill="#1f5d8c" font-weight="600" text-anchor="middle">③ Base replies REDIRECT: stations 2, 4, 6</text><text x="72.0" y="187" font-size="10" fill="#c9831f">① Ask neighbours</text></svg>
+    <div style="margin-top: 6px"><svg viewBox="0 0 600 92" width="600" height="92" font-family="Avenir Next, PingFang SC, sans-serif"><rect x="0.5" y="0.5" width="599" height="91" rx="10" fill="#f7f9fb" stroke="#d7dee6"/><text x="16" y="24" font-size="11" font-weight="600" fill="#1c2430">Inside one station = 1 MPI process + 7 OpenMP threads</text><rect x="16" y="38" width="128" height="38" rx="7" fill="#1c2430"/><text x="80" y="55" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="600">Thread 0: controller</text><text x="80" y="69" font-size="9" fill="#b9c6d3" text-anchor="middle">only thread calling MPI</text><rect x="172" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="197" y="54" font-size="10" fill="#fff" text-anchor="middle">Port 1</text><text x="197" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">busy</text><rect x="228" y="38" width="50" height="38" rx="7" fill="#ffffff" stroke="#d7dee6"/><text x="253" y="54" font-size="10" fill="#2f3946" text-anchor="middle">Port 2</text><text x="253" y="68" font-size="9" fill="#6b7684" text-anchor="middle">free</text><rect x="284" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="309" y="54" font-size="10" fill="#fff" text-anchor="middle">Port 3</text><text x="309" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">busy</text><rect x="340" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="365" y="54" font-size="10" fill="#fff" text-anchor="middle">Port 4</text><text x="365" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">busy</text><rect x="396" y="38" width="50" height="38" rx="7" fill="#ffffff" stroke="#d7dee6"/><text x="421" y="54" font-size="10" fill="#2f3946" text-anchor="middle">Port 5</text><text x="421" y="68" font-size="9" fill="#6b7684" text-anchor="middle">free</text><rect x="452" y="38" width="50" height="38" rx="7" fill="#1f5d8c" stroke="#1f5d8c"/><text x="477" y="54" font-size="10" fill="#fff" text-anchor="middle">Port 6</text><text x="477" y="68" font-size="9" fill="#dbe9f6" text-anchor="middle">busy</text><text x="514" y="55" font-size="9.5" fill="#6b7684">Own slot each,</text><text x="514" y="69" font-size="9.5" fill="#6b7684">no locks</text></svg></div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>2</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">01</div>
+  <div><h2>Choose by measurement, debug with data</h2><div class="pmeta">Distributed EV Charging Network Simulation · Experiments and quality<span class="chips"><span class="chip">CAAS cluster</span><span class="chip">ASan</span><span class="chip">UBSan</span><span class="chip">Python analysis</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 47%">
+    <div class="card">
+      <div class="ctitle">A polling gap, found and fixed: alert latency down about 60%</div>
+      <div class="csub">Median alert round trip (ms) · 6×6 grid, 37 processes, 3 hosts</div>
+      <svg viewBox="0 0 470 250" width="470" height="250" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="46" x2="458" y1="206.0" y2="206.0" stroke="#d7dee6" stroke-width="1"/><text x="38" y="209.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0</text><line x1="46" x2="458" y1="163.0" y2="163.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="166.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.25</text><line x1="46" x2="458" y1="120.0" y2="120.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="123.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.5</text><line x1="46" x2="458" y1="77.0" y2="77.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="80.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">0.75</text><line x1="46" x2="458" y1="34.0" y2="34.0" stroke="#e6ebf0" stroke-width="1"/><text x="38" y="37.5" font-size="10" fill="#6b7684" text-anchor="end" style="font-variant-numeric:tabular-nums">1</text><text x="38" y="20" font-size="10" fill="#6b7684" text-anchor="end">ms</text><path d="M83.66666666666667,206 v-135.3 q0,-4 4,-4 h22 q4,0 4,4 v135.3 z" fill="#a3adb8"/><path d="M115.66666666666667,206 v-51.0 q0,-4 4,-4 h22 q4,0 4,4 v51.0 z" fill="#1f5d8c"/><text x="98.7" y="60.7" font-size="11" fill="#2f3946" text-anchor="middle">0.81</text><text x="130.7" y="145.0" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">0.32</text><text x="114.7" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B1</text><text x="114.7" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">Iprobe + blocking</text><path d="M221.0,206 v-47.6 q0,-4 4,-4 h22 q4,0 4,4 v47.6 z" fill="#a3adb8"/><path d="M253.0,206 v-49.3 q0,-4 4,-4 h22 q4,0 4,4 v49.3 z" fill="#1f5d8c"/><text x="252.0" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B2</text><text x="252.0" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">Irecv + Test</text><path d="M358.33333333333337,206 v-133.6 q0,-4 4,-4 h22 q4,0 4,4 v133.6 z" fill="#a3adb8"/><path d="M390.33333333333337,206 v-54.5 q0,-4 4,-4 h22 q4,0 4,4 v54.5 z" fill="#1f5d8c"/><text x="373.3" y="62.4" font-size="11" fill="#2f3946" text-anchor="middle">0.80</text><text x="405.3" y="141.5" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">0.34</text><text x="389.3" y="222" font-size="11" fill="#1c2430" font-weight="600" text-anchor="middle">B3</text><text x="389.3" y="236" font-size="9.5" fill="#6b7684" text-anchor="middle">Persistent recv + Testsome</text><rect x="50" y="6" width="10" height="10" rx="2" fill="#a3adb8"/><text x="65" y="15" font-size="10.5" fill="#2f3946">Before: sleep after one empty poll</text><rect x="250" y="6" width="10" height="10" rx="2" fill="#1f5d8c"/><text x="265" y="15" font-size="10.5" fill="#2f3946">After: poll once more, then sleep</text></svg>
+      <div class="note">Sleeping after a single empty poll misses messages that land during the poll. Polling once more before sleeping cut B1 and B3 latency by more than half; B2’s call re-checks on its own, so it was already fast.</div>
+    </div>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <div class="card">
+      <div class="ctitle">Three node designs; N2 chosen by measurement</div>
+      <table class="t">
+        <tr><th>Node design</th><th class="n">Messages per node per cycle</th><th class="n">Shutdown</th></tr>
+        <tr><td>N1 · blocking Sendrecv every cycle</td><td class="n">3.39</td><td class="n">277 ms</td></tr>
+        <tr class="sel"><td>N2 · non-blocking, on demand (chosen)</td><td class="n">1.97</td><td class="n">84 ms</td></tr>
+        <tr><td>N3 · Neighbor_allgather every cycle</td><td class="n">3.39</td><td class="n">279 ms</td></tr>
+      </table>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">32/32</div><div class="lab">automated tests pass on the cluster</div></div>
+      <div class="stat"><div class="num">0</div><div class="lab">errors in our code from ASan, UBSan and LeakSanitizer</div></div>
+      <div class="stat"><div class="num">400+</div><div class="lab">experiment runs, local and cluster (up to 5 nodes × 16 cores)</div></div>
+    </div>
+    <div class="term"><div class="bar"><i></i><i></i><i></i><span style="margin-left: 6px">Live run on Monash’s CAAS cluster · 3×3 grid + base station</span></div><div class="cmd">$ bash scripts/demo_caas.sh</div><div class="dim">srun: job 197921 has been allocated resources</div><div class="">[base t=  2.500s] alert #1 node 8 (2,2) free 1/6 -&gt; suggest nearest available: 2(0,2) 4(1,1) 6(2,0)</div><div class="">[base t=  6.500s] alert #2 node 6 (2,0) free 1/6 -&gt; no available node nearby</div><div class="">[base t=  7.501s] alert #1 node 2 (0,2) free 0/6 -&gt; suggest nearest available: 0(0,0)</div><div class="dim">  ...</div><div class="hi">[base] 3x3 N2/B2: 20.10 s, 23 alerts (20 candidates, 3 none nearby), 101 local redirects, 725 messages</div><div class="hi">[base] neighbour exchange median 0.274 ms | alert round trip median 0.267 ms | shutdown 96.497 ms</div></div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>3</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">02</div>
+  <div><h2>Parallel prime search: find the bottleneck, then fix it</h2><div class="pmeta">Two-person course project · Lead, about 90% of the work · Aug – Sep 2026<span class="chips"><span class="chip">C</span><span class="chip">MPI</span><span class="chip">OpenMP</span><span class="chip">Pthreads</span><span class="chip">SLURM</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 52%">
+    <div class="card" style="padding-bottom: 6px">
+      <div class="ctitle">Speed-up versus number of workers</div>
+      <div class="csub">Median cluster runs against the serial version; dashed line: Amdahl model from the measured serial fraction</div>
+      <svg viewBox="0 0 560 360" width="560" height="360" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="44" x2="468" y1="320.0" y2="320.0" stroke="#d7dee6"/><text x="36" y="323.5" font-size="10" fill="#6b7684" text-anchor="end">0×</text><text x="44.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">0</text><line x1="44" x2="468" y1="245.0" y2="245.0" stroke="#e6ebf0"/><text x="36" y="248.5" font-size="10" fill="#6b7684" text-anchor="end">8×</text><text x="150.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">8</text><line x1="44" x2="468" y1="170.0" y2="170.0" stroke="#e6ebf0"/><text x="36" y="173.5" font-size="10" fill="#6b7684" text-anchor="end">16×</text><text x="256.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">16</text><line x1="44" x2="468" y1="95.0" y2="95.0" stroke="#e6ebf0"/><text x="36" y="98.5" font-size="10" fill="#6b7684" text-anchor="end">24×</text><text x="362.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">24</text><line x1="44" x2="468" y1="20.0" y2="20.0" stroke="#e6ebf0"/><text x="36" y="23.5" font-size="10" fill="#6b7684" text-anchor="end">32×</text><text x="468.0" y="335" font-size="10" fill="#6b7684" text-anchor="middle">32</text><text x="256.0" y="354" font-size="10.5" fill="#6b7684" text-anchor="middle">Total processes or threads (n = 80 million)</text><line x1="256.0" x2="256.0" y1="20" y2="320" stroke="#d7dee6"/><text x="250.0" y="312" font-size="9.5" fill="#6b7684" text-anchor="end">1 node</text><text x="262.0" y="312" font-size="9.5" fill="#6b7684">2 nodes</text><line x1="44.0" y1="320.0" x2="468.0" y2="20.0" stroke="#a3adb8" stroke-width="1"/><path d="M57.2,310.6 L70.5,301.1 L97.0,282.4 L123.5,263.8 L150.0,245.3 L203.0,208.6 L256.0,172.4 L309.0,136.6 L362.0,101.2 L415.0,66.3 L468.0,31.8" fill="none" stroke="#6b7684" stroke-width="1.5" stroke-dasharray="5 4"/><path d="M150.0,265.6 L256.0,213.6" fill="none" stroke="#a3adb8" stroke-width="2"/><circle cx="150.0" cy="265.6" r="4.5" fill="#a3adb8" stroke="#fff" stroke-width="2"/><circle cx="256.0" cy="213.6" r="4.5" fill="#a3adb8" stroke="#fff" stroke-width="2"/><text x="264.0" y="227.6" font-size="10.5" fill="#2f3946">11.4×</text><path d="M57.2,310.6 L70.5,301.2 L97.0,282.5 L123.5,263.9 L150.0,245.5 L203.0,209.2 L256.0,173.5 L362.0,113.0 L468.0,67.9" fill="none" stroke="#1f5d8c" stroke-width="2"/><circle cx="57.2" cy="310.6" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="70.5" cy="301.2" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="97.0" cy="282.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="123.5" cy="263.9" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="150.0" cy="245.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="203.0" cy="209.2" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="256.0" cy="173.5" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="362.0" cy="113.0" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><circle cx="468.0" cy="67.9" r="4" fill="#1f5d8c" stroke="#fff" stroke-width="2"/><text x="264.0" y="167.5" font-size="10.5" fill="#1c2430" font-weight="600">15.6×</text><text x="478.0" y="71.9" font-size="10.5" fill="#1c2430">26.9×</text><path d="M468.0,36.0 l6,6 l-6,6 l-6,-6 z" fill="#fff" stroke="#1f5d8c" stroke-width="2"/><text x="478.0" y="44.0" font-size="10.5" fill="#1c2430" font-weight="600">29.7×</text><rect x="48" y="28" width="232" height="90" rx="6" fill="#ffffff" fill-opacity="0.92"/><line x1="56" x2="76" y1="38" y2="38" stroke="#1f5d8c" stroke-width="2"/><circle cx="66" cy="38" r="3.5" fill="#1f5d8c" stroke="#fff" stroke-width="1.5"/><text x="84" y="42" font-size="10" fill="#2f3946">MPI, block-cyclic (measured)</text><line x1="56" x2="76" y1="54" y2="54" stroke="#a3adb8" stroke-width="2"/><circle cx="66" cy="54" r="3.5" fill="#a3adb8" stroke="#fff" stroke-width="1.5"/><text x="84" y="58" font-size="10" fill="#2f3946">MPI, contiguous blocks (measured)</text><path d="M66,65 l5,5 l-5,5 l-5,-5 z" fill="#fff" stroke="#1f5d8c" stroke-width="2"/><text x="84" y="74" font-size="10" fill="#2f3946">Hybrid MPI+OpenMP 4×8 (measured)</text><line x1="56" x2="76" y1="86" y2="86" stroke="#6b7684" stroke-width="1.5" stroke-dasharray="5 4"/><text x="84" y="90" font-size="10" fill="#2f3946">Amdahl model</text><line x1="56" x2="76" y1="102" y2="102" stroke="#a3adb8" stroke-width="1"/><text x="84" y="106" font-size="10" fill="#2f3946">Ideal linear</text></svg>
+    </div>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <p class="lead" style="margin: 0">Starting from a serial version, I built Pthreads, OpenMP, MPI and hybrid MPI+OpenMP versions, measuring before every optimisation.</p>
+    <div class="card">
+      <div class="ctitle">Bottleneck 1: load imbalance</div>
+      <div class="note">Larger numbers need more trial divisions, so contiguous blocks overloaded the last process. Dealing blocks of 4,096 numbers round-robin moved the slowest-to-mean ratio <b>1.41 → 1.00</b> and 16-process speed-up <b>11.4× → 15.6×</b>.</div>
+    </div>
+    <div class="card">
+      <div class="ctitle">Bottleneck 2: serial output on rank 0</div>
+      <div class="note">A pilot run showed all output formatting piled on rank 0. Having each rank format its own primes, with rank 0 only writing the file, moved pilot speed-up <b>12.2× → 15.1×</b>.</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">873</div><div class="lab">timed runs across 245 configurations</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lab">of outputs match an independent sieve</div></div>
+      <div class="stat"><div class="num">0.16%</div><div class="lab">measured serial fraction; model within 1% on one node</div></div>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>4</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">03</div>
+  <div><h2>Flippy Bit: a functional reactive web game</h2><div class="pmeta">Individual course assignment · Aug – Sep 2026 · Play it at rgxeva.github.io/flippy-bit<span class="chips"><span class="chip">TypeScript</span><span class="chip">RxJS</span><span class="chip">Vite</span><span class="chip">Vitest</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 44%"><div class="shot"><img src="img/f_play.png"></div></div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 11px">
+    <p class="lead" style="margin: 0">Hexadecimal numbers fall toward a line; before each one lands, the player flips 8 binary digits to match its value.</p>
+    <div>
+      <h3>ALL STATE LIVES IN ONE STREAM</h3>
+      <div class="flow"><div class="step"><b>Five event streams</b><span>clock, keys, mouse, pause, restart</span></div><div class="arrow">→</div><div class="step"><b>One action type</b><span>each event maps to an Action</span></div><div class="arrow">→</div><div class="step"><b>merge + scan</b><span>folded into one game state</span></div><div class="arrow">→</div><div class="step last"><b>render()</b><span>the only side effect</span></div></div>
+      <div class="note" style="margin-top: 6px">Every game rule is a pure function that never touches the DOM or reads the clock, so tests can drive hundreds of time steps directly in Node.</div>
+    </div>
+    <div>
+      <h3>TESTING THE TESTS WITH MUTATIONS</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">87</div><div class="lab">tests over the pure modules and event streams</div></div>
+        <div class="stat"><div class="num">21/21</div><div class="lab">deliberately injected faults caught by the tests</div></div>
+        <div class="stat"><div class="num">+2</div><div class="lab">tests added to close the blind spot mutation found</div></div>
+      </div>
+      <div class="note" style="margin-top: 6px">Faults included judging the wrong target, removing the speed cap, reversing bit order and mutating state in place. Mutating a target’s height in place survived the first round because the immutability test only checked the opening state, so I added a frame-by-frame snapshot check.</div>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>5</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">04</div>
+  <div><h2>MiniZinc-Lite: constraint model parser and solver</h2><div class="pmeta">Individual course assignment · Oct – Nov 2026<span class="chips"><span class="chip">Haskell</span><span class="chip">Parser combinators</span><span class="chip">BNF</span><span class="chip">TypeScript front end</span></span></div></div>
+</div>
+<p class="lead">Reads a constraint-modelling language, parses it into a syntax tree, checks names and scope, then finds every feasible solution or the optimal one.</p>
+<div class="flow"><div class="step"><b>Model text</b><span>.mzn source</span></div><div class="arrow">→</div><div class="step"><b>Parser combinators</b><span>one parser per BNF rule</span></div><div class="arrow">→</div><div class="step"><b>Semantic checks</b><span>undeclared or duplicate names the grammar cannot express</span></div><div class="arrow">→</div><div class="step"><b>Syntax tree</b><span>declarations, constraints, goal</span></div><div class="arrow">→</div><div class="step last"><b>Solve</b><span>all feasible solutions, or maximise and minimise</span></div></div>
+<div class="cols" style="margin-top: 14px; align-items: flex-start">
+  <div style="width: 40%">
+    <div class="csub">Input: the 6-queens problem</div>
+    <pre class="code"><span class="k">int</span>: n = 6;
+array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
+
+<span class="k">constraint</span> <span class="k">allDifferent</span>(q);
+<span class="k">constraint</span> <span class="k">allDifferent</span>(i in 1..n)(q[i] + i);
+<span class="k">constraint</span> <span class="k">allDifferent</span>(i in 1..n)(q[i] - i);
+
+<span class="k">solve</span> <span class="k">satisfy</span>;</pre>
+  </div>
+  <div style="width: 22%">
+    <div class="csub">First solution found</div>
+    <svg viewBox="0 0 156 156" width="195" height="195"><rect x="0" y="0" width="26" height="26" fill="#ffffff"/><rect x="26" y="0" width="26" height="26" fill="#e9eef3"/><rect x="52" y="0" width="26" height="26" fill="#ffffff"/><rect x="78" y="0" width="26" height="26" fill="#e9eef3"/><rect x="104" y="0" width="26" height="26" fill="#ffffff"/><rect x="130" y="0" width="26" height="26" fill="#e9eef3"/><rect x="0" y="26" width="26" height="26" fill="#e9eef3"/><rect x="26" y="26" width="26" height="26" fill="#ffffff"/><rect x="52" y="26" width="26" height="26" fill="#e9eef3"/><rect x="78" y="26" width="26" height="26" fill="#ffffff"/><rect x="104" y="26" width="26" height="26" fill="#e9eef3"/><rect x="130" y="26" width="26" height="26" fill="#ffffff"/><rect x="0" y="52" width="26" height="26" fill="#ffffff"/><rect x="26" y="52" width="26" height="26" fill="#e9eef3"/><rect x="52" y="52" width="26" height="26" fill="#ffffff"/><rect x="78" y="52" width="26" height="26" fill="#e9eef3"/><rect x="104" y="52" width="26" height="26" fill="#ffffff"/><rect x="130" y="52" width="26" height="26" fill="#e9eef3"/><rect x="0" y="78" width="26" height="26" fill="#e9eef3"/><rect x="26" y="78" width="26" height="26" fill="#ffffff"/><rect x="52" y="78" width="26" height="26" fill="#e9eef3"/><rect x="78" y="78" width="26" height="26" fill="#ffffff"/><rect x="104" y="78" width="26" height="26" fill="#e9eef3"/><rect x="130" y="78" width="26" height="26" fill="#ffffff"/><rect x="0" y="104" width="26" height="26" fill="#ffffff"/><rect x="26" y="104" width="26" height="26" fill="#e9eef3"/><rect x="52" y="104" width="26" height="26" fill="#ffffff"/><rect x="78" y="104" width="26" height="26" fill="#e9eef3"/><rect x="104" y="104" width="26" height="26" fill="#ffffff"/><rect x="130" y="104" width="26" height="26" fill="#e9eef3"/><rect x="0" y="130" width="26" height="26" fill="#e9eef3"/><rect x="26" y="130" width="26" height="26" fill="#ffffff"/><rect x="52" y="130" width="26" height="26" fill="#e9eef3"/><rect x="78" y="130" width="26" height="26" fill="#ffffff"/><rect x="104" y="130" width="26" height="26" fill="#e9eef3"/><rect x="130" y="130" width="26" height="26" fill="#ffffff"/><circle cx="13.0" cy="39.0" r="8" fill="#1f5d8c"/><circle cx="39.0" cy="91.0" r="8" fill="#1f5d8c"/><circle cx="65.0" cy="143.0" r="8" fill="#1f5d8c"/><circle cx="91.0" cy="13.0" r="8" fill="#1f5d8c"/><circle cx="117.0" cy="65.0" r="8" fill="#1f5d8c"/><circle cx="143.0" cy="117.0" r="8" fill="#1f5d8c"/><rect x="0.5" y="0.5" width="155" height="155" fill="none" stroke="#d7dee6"/></svg>
+    <pre class="code" style="margin-top: 8px; font-size: 7.6pt">[("q[1]",2),("q[2]",4),("q[3]",6),
+ ("q[4]",1),("q[5]",3),("q[6]",5)]
+… 4 solutions in total</pre>
+  </div>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+    <div class="stats" style="flex-direction: column">
+      <div class="stat"><div class="num">30</div><div class="lab">sample models whose solutions the tests compare with the expected answers</div></div>
+      <div class="stat"><div class="num">22</div><div class="lab">invalid models the tests check the parser rejects</div></div>
+    </div>
+    <div class="note">A web front end shows solutions live as the model is typed on the left, and saves them with one click.</div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>6</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">05</div>
+  <div><h2>Quant research toolchains</h2><div class="pmeta">Personal projects · sole designer, developer and researcher · Dec 2025 – present<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
+</div>
+<p class="lead">Since December 2025 I have built two research toolchains on my own, and I have live-trading experience. Only the engineering structure is shown here; strategies and returns stay private.</p>
+<h3>DIGITAL-ASSET RESEARCH TOOLCHAIN (RUST REFACTOR)</h3>
+<div class="flow"><div class="step"><b>Archive</b><span>raw market data stored</span></div><div class="arrow">→</div><div class="step"><b>Normalise</b><span>one format across sources</span></div><div class="arrow">→</div><div class="step"><b>Replay</b><span>markets replayed in event time</span></div><div class="arrow">→</div><div class="step"><b>Strategy and factors</b><span>factors mined and backtested on Tardis data</span></div><div class="arrow">→</div><div class="step last"><b>Execution and risk</b><span>simulated fills and risk checks</span></div></div>
+<div style="height: 14px"></div>
+<h3>US EQUITY RESEARCH AND BACKTESTING (LEAN)</h3>
+<div class="flow"><div class="step"><b>Data validation</b><span>market-data quality checks</span></div><div class="arrow">→</div><div class="step"><b>Features</b><span>research features</span></div><div class="arrow">→</div><div class="step"><b>Signals</b><span>strategy signals</span></div><div class="arrow">→</div><div class="step"><b>Transaction costs</b><span>fees and other cost assumptions</span></div><div class="arrow">→</div><div class="step last"><b>Order interface</b><span>isolated from live-broker permissions</span></div></div>
+<div class="cols" style="margin-top: 16px">
+  <div class="card" style="flex: 1">
+    <div class="ctitle">Engineering checks I focus on</div>
+    <div class="note">Event ordering · quantity precision · fee assumptions · error handling · reproducibility. Requirements, test cases and code review are done with AI coding assistants, and every generated line is reviewed and tested by hand.</div>
+  </div>
+  <div class="card" style="flex: 1">
+    <div class="ctitle">Factor research</div>
+    <div class="note">Familiar with WorldQuant BRAIN and Qlib, with factor construction and backtest evaluation; factor mining on Tardis historical data.</div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>7</span></div>
+</section><section class="page">
+<div class="phead">
+  <div class="pno">06</div>
+  <div><h2>GPU image rotation</h2><div class="pmeta">Two-person course project · Oct 2026<span class="chips"><span class="chip">CUDA</span><span class="chip">Numba</span><span class="chip">Python</span></span></div></div>
+</div>
+<div class="cols">
+  <div style="width: 46%">
+    <p class="lead">Rotating images on the GPU: one thread per output pixel, each inverse-mapping back to the source image and writing only its own pixel, so no atomics are needed.</p>
+    <ul class="pts">
+      <li>16 × 16 thread blocks with a ceiling-divided grid; threads past the edge exit at a bounds check</li>
+      <li>Timing covers the whole copy-in, kernel and copy-out pipeline, compared against a compiled CPU version</li>
+      <li>Every run is checked against the CPU result; all trials match</li>
+      <li>The larger the image, the smaller the share of data transfer and the bigger the GPU’s lead</li>
+    </ul>
+  </div>
+  <div style="flex: 1">
+    <div class="card">
+      <div class="ctitle">End-to-end speed-up (including memory copies)</div>
+      <div class="csub">30° rotation versus single-core CPU, median of 5 runs</div>
+      <svg viewBox="0 0 360 210" width="360" height="210" font-family="Avenir Next, PingFang SC, sans-serif"><line x1="40" x2="346" y1="170.0" y2="170.0" stroke="#d7dee6"/><text x="32" y="173.5" font-size="10" fill="#6b7684" text-anchor="end">0×</text><line x1="40" x2="346" y1="120.7" y2="120.7" stroke="#e6ebf0"/><text x="32" y="124.2" font-size="10" fill="#6b7684" text-anchor="end">2×</text><line x1="40" x2="346" y1="71.3" y2="71.3" stroke="#e6ebf0"/><text x="32" y="74.8" font-size="10" fill="#6b7684" text-anchor="end">4×</text><line x1="40" x2="346" y1="22.0" y2="22.0" stroke="#e6ebf0"/><text x="32" y="25.5" font-size="10" fill="#6b7684" text-anchor="end">6×</text><path d="M74.0,170 v-46.8 q0,-4 4,-4 h26 q4,0 4,4 v46.8 z" fill="#1f5d8c"/><text x="91.0" y="112.2" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">2.1×</text><text x="91.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">512²</text><text x="91.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">2.41 → 1.17 ms</text><path d="M176.0,170 v-102.3 q0,-4 4,-4 h26 q4,0 4,4 v102.3 z" fill="#1f5d8c"/><text x="193.0" y="56.7" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">4.3×</text><text x="193.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">1024²</text><text x="193.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">11.29 → 2.62 ms</text><path d="M278.0,170 v-119.3 q0,-4 4,-4 h26 q4,0 4,4 v119.3 z" fill="#1f5d8c"/><text x="295.0" y="39.7" font-size="12" font-weight="600" fill="#1c2430" text-anchor="middle">5.0×</text><text x="295.0" y="185" font-size="11" fill="#1c2430" text-anchor="middle">2048²</text><text x="295.0" y="199" font-size="9" fill="#6b7684" text-anchor="middle">39.85 → 7.97 ms</text></svg>
+    </div>
+  </div>
+</div>
+<div class="foot"><span>Yiyou Xu · Portfolio</span><span>8</span></div>
+</section><script>
+// Pages are laid out at their print width (320 mm); shrink them to fit small screens.
+(function () {
+  var PAGE_PX = 320 / 25.4 * 96;
+  function fit() {
+    // On phones the wide page stretches innerWidth, so the screen width is the real limit.
+    var vw = Math.min(window.innerWidth, (window.screen && screen.width) || window.innerWidth);
+    var z = Math.min(1, (vw - 24) / PAGE_PX);
+    document.querySelectorAll('.page').forEach(function (p) { p.style.zoom = z; });
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</body></html>
