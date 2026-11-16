@@ -99,7 +99,7 @@ pre.code .k { color: #1f5d8c; font-weight: 600; }
   <div class="bar"></div>
   <div class="who">莫纳什大学 计算机科学 · Advanced Computer Science · 2027 届</div>
   <div class="contact">yxuu0276@student.monash.edu · <a href="https://github.com/RGXeva">github.com/RGXeva</a></div>
-  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">分布式电动车充电网络仿真</div><div class="tg">C · Open MPI · OpenMP · 集群</div><div class="kp">告警往返延迟 <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">并行素数搜索与性能优化</div><div class="tg">C · MPI · OpenMP · 集群</div><div class="kp">16 进程加速比 <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit 网页游戏</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> 个测试，<b>21/21</b> 个注入故障被捕获</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite 解析与求解器</div><div class="tg">Haskell · 解析器组合子</div><div class="kp">完整 BNF 文法，<b>30 + 22</b> 个测试模型</div></div><div class="pc"><div class="no">05</div><div class="tt">量化研究工具链</div><div class="tg">Rust · Python · LEAN</div><div class="kp"><b>2025.12</b> 起独立开发，有实盘经验</div></div><div class="pc"><div class="no">06</div><div class="tt">GPU 图像旋转</div><div class="tg">CUDA · Numba</div><div class="kp">2048² 图像端到端快 <b>5.0×</b></div></div></div>
+  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">分布式电动车充电网络仿真</div><div class="tg">C · Open MPI · OpenMP · 集群</div><div class="kp">告警往返延迟 <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">并行素数搜索与性能优化</div><div class="tg">C · MPI · OpenMP · 集群</div><div class="kp">16 进程加速比 <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit 网页游戏</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> 个测试，<b>21/21</b> 个注入故障被捕获</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite 解析与求解器</div><div class="tg">Haskell · 解析器组合子</div><div class="kp">完整 BNF 文法，<b>30 + 22</b> 个测试模型</div></div><div class="pc"><div class="no">05</div><div class="tt">量化研究平台</div><div class="tg">Python · Rust · Tardis</div><div class="kp"><b>2025.12</b> 起独立开发，Rust 提速约 <b>50×</b></div></div><div class="pc"><div class="no">06</div><div class="tt">GPU 图像旋转</div><div class="tg">CUDA · Numba</div><div class="kp">2048² 图像端到端快 <b>5.0×</b></div></div></div>
 </section><section class="page">
 <div class="phead">
   <div class="pno">01</div>
@@ -252,22 +252,22 @@ array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
 </section><section class="page">
 <div class="phead">
   <div class="pno">05</div>
-  <div><h2>量化研究工具链</h2><div class="pmeta">个人项目 · 独立负责设计、开发与研究 · 2025.12 至今<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
+  <div><h2>量化研究平台</h2><div class="pmeta">个人项目 · 独立负责设计、开发与研究 · 2025.12 至今<span class="chips"><span class="chip">Python</span><span class="chip">Rust</span><span class="chip">SQLite</span><span class="chip">Tardis</span><span class="chip">QuantConnect LEAN</span></span></div></div>
 </div>
-<p class="lead">从 2025 年 12 月起一个人持续开发两套研究工具链，并有实盘交易经验。数字资产工具链先用 Python 搭建，遇到延迟瓶颈后经对比测试迁移到 Rust。下面只展示工程结构，策略细节和收益不公开。</p>
-<h3>数字资产研究工具链（从 Python 迁移到 Rust）</h3>
-<div class="flow"><div class="step"><b>行情归档</b><span>原始行情数据存档</span></div><div class="arrow">→</div><div class="step"><b>标准化</b><span>统一不同来源的格式</span></div><div class="arrow">→</div><div class="step"><b>历史回放</b><span>按事件时间重放市场</span></div><div class="arrow">→</div><div class="step"><b>策略与因子</b><span>用 Tardis 数据挖因子、回测评估</span></div><div class="arrow">→</div><div class="step last"><b>执行与风控模拟</b><span>成交与风控的模拟检查</span></div></div>
+<p class="lead">从 2025 年 12 月起一个人持续做量化研究，并有实盘交易经验。核心是事件合约研究平台：从策略构想、历史研究到实时影子运行全流程独立完成。下面只展示工程结构，策略细节和收益不公开。</p>
+<h3>事件合约量化研究平台（Python + Rust）</h3>
+<div class="flow"><div class="step"><b>策略构想</b><span>多年基线和成交记录分析</span></div><div class="arrow">→</div><div class="step"><b>历史数据</b><span>Tardis 2019–2026 年约 2.67 TB</span></div><div class="arrow">→</div><div class="step"><b>因子研究</b><span>十一批因子，判据事先冻结</span></div><div class="arrow">→</div><div class="step"><b>Rust 加速</b><span>盘口重建 5.1 秒 → 0.1 秒</span></div><div class="arrow">→</div><div class="step last"><b>影子运行</b><span>41 条候选，SQLite 记录，不下单</span></div></div>
 <div style="height: 14px"></div>
 <h3>美股研究与回测平台（LEAN）</h3>
 <div class="flow"><div class="step"><b>数据校验</b><span>行情数据质量检查</span></div><div class="arrow">→</div><div class="step"><b>特征</b><span>研究用特征</span></div><div class="arrow">→</div><div class="step"><b>信号</b><span>策略信号</span></div><div class="arrow">→</div><div class="step"><b>交易成本</b><span>手续费等成本假设</span></div><div class="arrow">→</div><div class="step last"><b>订单处理接口</b><span>与券商实盘权限隔离</span></div></div>
 <div class="cols" style="margin-top: 16px">
   <div class="card" style="flex: 1">
-    <div class="ctitle">重点检查的工程问题</div>
-    <div class="note">事件顺序 · 数量精度 · 手续费假设 · 异常处理 · 结果可复现。需求拆解、测试用例和代码审查与 AI 编程助手配合完成，生成的代码都经人工审查和测试验证。</div>
+    <div class="ctitle">怎么保证结果可信</div>
+    <div class="note">Rust 与 Python 参考实现逐值对拍，4400 多万个格子零差异 · 判据和参数在看结果之前冻结 · 训练、验证、前向分段评估 · 关键环节自动化测试守门。不合格的策略如实淘汰。</div>
   </div>
   <div class="card" style="flex: 1">
     <div class="ctitle">因子研究</div>
-    <div class="note">熟悉世坤 WorldQuant BRAIN 和 Qlib，做过因子构建和回测评估；用 Tardis 历史数据做因子挖掘。</div>
+    <div class="note">熟悉世坤 WorldQuant BRAIN 和 Qlib，做过因子构建和回测评估；在 Tardis 历史数据上实现了十一批因子。2.67 TB 全量处理用 10 线程从 13.6 小时压到 1.6 小时。</div>
   </div>
 </div>
 <div class="foot"><span>徐亦优 · Yiyou Xu · 作品集</span><span>7</span></div>

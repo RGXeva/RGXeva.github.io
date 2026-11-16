@@ -99,7 +99,7 @@ pre.code .k { color: #1f5d8c; font-weight: 600; }
   <div class="bar"></div>
   <div class="who">Monash University · Computer Science (Advanced Computer Science) · Class of 2027</div>
   <div class="contact">yxuu0276@student.monash.edu · <a href="https://github.com/RGXeva">github.com/RGXeva</a></div>
-  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">Distributed EV Charging Network</div><div class="tg">C · Open MPI · OpenMP · Cluster</div><div class="kp">Alert round trip <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">Parallel Prime Search</div><div class="tg">C · MPI · OpenMP · Cluster</div><div class="kp">16-process speed-up <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit Web Game</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> tests, <b>21/21</b> injected faults caught</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite Parser &amp; Solver</div><div class="tg">Haskell · Parser combinators</div><div class="kp">Full BNF grammar, <b>30 + 22</b> test models</div></div><div class="pc"><div class="no">05</div><div class="tt">Quant Research Toolchains</div><div class="tg">Rust · Python · LEAN</div><div class="kp">Solo since <b>Dec 2025</b>, live trading</div></div><div class="pc"><div class="no">06</div><div class="tt">GPU Image Rotation</div><div class="tg">CUDA · Numba</div><div class="kp"><b>5.0×</b> faster end to end at 2048²</div></div></div>
+  <div class="grid6"><div class="pc"><div class="no">01</div><div class="tt">Distributed EV Charging Network</div><div class="tg">C · Open MPI · OpenMP · Cluster</div><div class="kp">Alert round trip <b>0.81 → 0.32 ms</b></div></div><div class="pc"><div class="no">02</div><div class="tt">Parallel Prime Search</div><div class="tg">C · MPI · OpenMP · Cluster</div><div class="kp">16-process speed-up <b>11.4× → 15.6×</b></div></div><div class="pc"><div class="no">03</div><div class="tt">Flippy Bit Web Game</div><div class="tg">TypeScript · RxJS · Vitest</div><div class="kp"><b>87</b> tests, <b>21/21</b> injected faults caught</div></div><div class="pc"><div class="no">04</div><div class="tt">MiniZinc-Lite Parser &amp; Solver</div><div class="tg">Haskell · Parser combinators</div><div class="kp">Full BNF grammar, <b>30 + 22</b> test models</div></div><div class="pc"><div class="no">05</div><div class="tt">Quant Research Platform</div><div class="tg">Python · Rust · Tardis</div><div class="kp">Solo since <b>Dec 2025</b>; Rust about <b>50×</b> faster</div></div><div class="pc"><div class="no">06</div><div class="tt">GPU Image Rotation</div><div class="tg">CUDA · Numba</div><div class="kp"><b>5.0×</b> faster end to end at 2048²</div></div></div>
 </section><section class="page">
 <div class="phead">
   <div class="pno">01</div>
@@ -252,22 +252,22 @@ array[1..n] <span class="k">of</span> <span class="k">var</span> 1..n: q;
 </section><section class="page">
 <div class="phead">
   <div class="pno">05</div>
-  <div><h2>Quant research toolchains</h2><div class="pmeta">Personal projects · sole designer, developer and researcher · Dec 2025 – present<span class="chips"><span class="chip">Rust</span><span class="chip">Python</span><span class="chip">QuantConnect LEAN</span><span class="chip">Docker</span><span class="chip">Tardis</span></span></div></div>
+  <div><h2>Quant research platform</h2><div class="pmeta">Personal projects · sole designer, developer and researcher · Dec 2025 – present<span class="chips"><span class="chip">Python</span><span class="chip">Rust</span><span class="chip">SQLite</span><span class="chip">Tardis</span><span class="chip">QuantConnect LEAN</span></span></div></div>
 </div>
-<p class="lead">Since December 2025 I have built two research toolchains on my own, and I have live-trading experience. The digital-asset toolchain started in Python and moved to Rust after benchmarking showed latency was the bottleneck. Only the engineering structure is shown here; strategies and returns stay private.</p>
-<h3>DIGITAL-ASSET RESEARCH TOOLCHAIN (PYTHON → RUST)</h3>
-<div class="flow"><div class="step"><b>Archive</b><span>raw market data stored</span></div><div class="arrow">→</div><div class="step"><b>Normalise</b><span>one format across sources</span></div><div class="arrow">→</div><div class="step"><b>Replay</b><span>markets replayed in event time</span></div><div class="arrow">→</div><div class="step"><b>Strategy and factors</b><span>factors mined and backtested on Tardis data</span></div><div class="arrow">→</div><div class="step last"><b>Execution and risk</b><span>simulated fills and risk checks</span></div></div>
+<p class="lead">Since December 2025 I have done quant research on my own, and I have live-trading experience. The core is an event-contract research platform, built end to end from strategy ideas to live shadow running. Only the engineering structure is shown; strategies and returns stay private.</p>
+<h3>EVENT-CONTRACT RESEARCH PLATFORM (PYTHON + RUST)</h3>
+<div class="flow"><div class="step"><b>Strategy ideas</b><span>multi-year baselines and trade-record analysis</span></div><div class="arrow">→</div><div class="step"><b>History</b><span>about 2.67 TB of Tardis data, 2019–2026</span></div><div class="arrow">→</div><div class="step"><b>Factor research</b><span>eleven batches, criteria frozen first</span></div><div class="arrow">→</div><div class="step"><b>Rust speed-up</b><span>order-book rebuild 5.1 s → 0.1 s</span></div><div class="arrow">→</div><div class="step last"><b>Shadow running</b><span>41 candidates, SQLite logs, no orders</span></div></div>
 <div style="height: 14px"></div>
 <h3>US EQUITY RESEARCH AND BACKTESTING (LEAN)</h3>
 <div class="flow"><div class="step"><b>Data validation</b><span>market-data quality checks</span></div><div class="arrow">→</div><div class="step"><b>Features</b><span>research features</span></div><div class="arrow">→</div><div class="step"><b>Signals</b><span>strategy signals</span></div><div class="arrow">→</div><div class="step"><b>Transaction costs</b><span>fees and other cost assumptions</span></div><div class="arrow">→</div><div class="step last"><b>Order interface</b><span>isolated from live-broker permissions</span></div></div>
 <div class="cols" style="margin-top: 16px">
   <div class="card" style="flex: 1">
-    <div class="ctitle">Engineering checks I focus on</div>
-    <div class="note">Event ordering · quantity precision · fee assumptions · error handling · reproducibility. Requirements, test cases and code review are done with AI coding assistants, and every generated line is reviewed and tested by hand.</div>
+    <div class="ctitle">How results stay trustworthy</div>
+    <div class="note">Rust matches the Python reference on 44M+ cells with zero differences · criteria and parameters frozen before results · train, validation and forward splits · automated tests guard key steps. Strategies that fail are dropped, not tuned.</div>
   </div>
   <div class="card" style="flex: 1">
     <div class="ctitle">Factor research</div>
-    <div class="note">Familiar with WorldQuant BRAIN and Qlib, with factor construction and backtest evaluation; factor mining on Tardis historical data.</div>
+    <div class="note">Familiar with WorldQuant BRAIN and Qlib, with factor construction and backtest evaluation; eleven factor batches on Tardis data. Processing all 2.67 TB takes 1.6 h on 10 threads instead of 13.6 h.</div>
   </div>
 </div>
 <div class="foot"><span>Yiyou Xu · Portfolio</span><span>7</span></div>
